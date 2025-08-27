@@ -1,0 +1,116 @@
+.p {
+    text-align: center;
+    font-weight: 400;
+    margin-top: 4rem;
+  }
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .box {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
+    height: 456px;
+    border-radius: 40px;
+    margin-top: 4rem;
+    border: 1px solid #e4e4e4;
+  }
+  .box input {
+    border: none;
+    outline: blue;
+    border-radius: 10px;
+    background-color: #f2f2f2;
+    font-size: 12px;
+    width: 80%;
+    height: 2.5rem;
+    margin-top: 20px;
+    padding-right: 10px;
+  }
+  .box button {
+    border: none;
+    font-size: 18px;
+    outline: none;
+    border-radius: 10px;
+    width: 80%;
+    height: 2.5rem;
+    margin-top: 20px;
+    cursor: pointer;
+    background-color: #55a3f0;
+    color: #fff;
+  }
+  
+  .box button:hover {
+    background-color: #077bef;
+  }
+  
+  .box p {
+    font-weight: 600;
+  }
+  .link {
+    text-decoration: none;
+    color: #55a3f0;
+    margin-top: 10px;
+    margin-left: 160px;
+  }
+  .link:hover {
+    color: #077bef;
+  }
+  
+  .alertError {
+    position: absolute;
+    background-color: rgb(255, 95, 95);
+    padding: 1rem 1rem;
+    width: 15%;
+    text-align: center;
+    border-radius: 10px;
+    color: #fff;
+    top: 5rem;
+  }
+  
+  .FaEye1 {
+    position: absolute;
+    color: #868686;
+    right: 54rem;
+    top: 31.7rem;
+    cursor: pointer;
+  }
+  
+  .FaEye2 {
+    position: absolute;
+    color: #868686;
+    right: 54rem;
+    top: 35.5rem;
+    cursor: pointer;
+  }
+  .FaEyeSlash1 {
+    position: absolute;
+    color: #868686;
+    right: 54rem;
+    top: 31.7rem;
+    cursor: pointer;
+  }
+  .FaEyeSlash2 {
+    position: absolute;
+    color: #868686;
+    right: 54rem;
+    top: 35.5rem;
+    cursor: pointer;
+  }
+  .FaEye1:hover {
+    color: #077bef;
+  }
+  .FaEye2:hover {
+    color: #077bef;
+  }
+  .FaEyeSlash1:hover {
+    color: #077bef;
+  }
+  .FaEyeSlash2:hover {
+    color: #077bef;
+  }
+  
