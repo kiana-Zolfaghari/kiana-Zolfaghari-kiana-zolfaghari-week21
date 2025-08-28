@@ -75,30 +75,34 @@
   .FaEye1 {
     position: absolute;
     color: #868686;
-    right: 54rem;
-    top: 31.7rem;
+    left: 40%;
+    top: 27rem;
     cursor: pointer;
   }
   
-  .FaEye2 {
-    position: absolute;
-    color: #868686;
-    right: 54rem;
-    top: 35.5rem;
-    cursor: pointer;
-  }
+
   .FaEyeSlash1 {
     position: absolute;
     color: #868686;
-    right: 54rem;
-    top: 31.7rem;
+    left: 40%;
+    top: 27rem;
     cursor: pointer;
   }
+ 
+  .FaEye2 {
+    position: absolute;
+    color: #868686;
+    left: 40%;
+    top: 30.7rem;
+    cursor: pointer;
+  }
+  
+
   .FaEyeSlash2 {
     position: absolute;
     color: #868686;
-    right: 54rem;
-    top: 35.5rem;
+    left: 40%;
+    top: 30.7rem;
     cursor: pointer;
   }
   .FaEye1:hover {

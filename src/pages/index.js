@@ -1,6 +1,11 @@
-
+import { useRouter } from "next/router";
+import { useEffect } from "react";
 
 export default function Home() {
-  return (
-  <></>)
+  const { push } = useRouter();
+  useEffect(() => {
+    push("/products");
+  }, []);
+
+  return <></>;
 }

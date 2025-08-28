@@ -1,0 +1,135 @@
+.edit {
+    margin-top: 8px;
+    font-size: 20px;
+    color: #4ade80;
+    cursor: pointer;
+  }
+  .edit:hover {
+    color: #ffff;
+    background-color: #4ade80;
+    border-radius: 5px;
+  }
+  .delete {
+    margin-top: 10px;
+    font-size: 20px;
+    color: #f43f5e;
+    cursor: pointer;
+  }
+  .delete:hover {
+    color: #ffff;
+    background-color: #f43f5e;
+    border-radius: 5px;
+  }
+  .id{
+    font-size: 14px;
+  }
+  .td{
+    padding: 16px;
+    border-bottom: #e4e4e4 1px solid;
+  }
+  .index{
+    margin-right: 6%;
+    margin-top: 20px;
+    position: absolute;
+  }
+  .noData {
+    color: #a8a8a8;
+  }
+  
+  @keyframes zoomIn {
+    from {
+      transform: scale(0.5);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  .dialogOverlay {
+    position: fixed;
+    top: 0; 
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+  
+  .dialog {
+    flex-direction: column;
+    background: #fff;
+    width: 25rem;
+    height: 16rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(181, 180, 180, 0.3);
+    text-align: center;
+    z-index: 1001;
+    position: relative;
+    animation: zoomIn 0.3s ease-out forwards;
+  }
+  
+  .dialogOverlay button {
+    border: none;
+    width: 8rem;
+    height: 2rem;
+    border-radius: 10px;
+    font-size: 15px;
+    cursor: pointer;
+    margin-right: 14px;
+    margin-left: 14px;
+    margin-top: 2rem;
+  }
+  .cancel{
+    background-color: #DFDFDF;
+    color:#282828CC;
+  }
+  .deleteDialog{
+    background-color: #F43F5E;
+    color: #ffffff;
+  }
+  
+  .dialogOverlay p {
+    margin-top: 3rem;
+  }
+  
+  .cancel:hover{
+    background-color: #b2b2b2;
+    color:#282828CC;
+  }
+  .deleteDialog:hover{
+    background-color: #f0183c;
+    color: #ffffff;
+  }
+  
+  .image {
+    width: 80px;
+    height: 80px;
+  }
+  .image img {
+    margin-right: 9.5rem;
+    margin-top: 2rem;
+  }
+  .checkbox{
+    appearance: none;
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    background-color: #f2f2f2;
+    border: none;
+    border-radius: 4px;
+    position: absolute;
+    margin-right: -14%;
+    cursor: pointer;
+  }
+    
+  .checkbox:checked {
+    background-color: #55a3f0; 
+    background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 3L4.5 8.5L2 6' stroke='white' stroke-width='2'/%3E%3C/svg%3E");
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  

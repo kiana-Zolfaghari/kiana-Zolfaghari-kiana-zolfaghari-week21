@@ -1,0 +1,115 @@
+.p {
+  margin-right: 80px;
+  margin-top: 77px;
+}
+.btn {
+  position: absolute;
+  border: none;
+  font-size: 18px;
+  transition: color 0.5s, transform 0.2s, background-color 0.2s;
+  outline: none;
+  border-radius: 10px;
+  width: 8rem;
+  height: 2.5rem;
+  top: 7rem;
+  cursor: pointer;
+  background-color: #55a3f0;
+  color: #fff;
+  left: 9rem;
+}
+.btn:hover {
+  background-color: #077bef;
+}
+.table {
+  border: 1px solid #e4e4e4;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  overflow: hidden;
+  margin-top: 12px;
+  width: 100%;
+  table-layout: fixed;
+  transition: margin-top 0.3s ease;
+}
+.tableWithButton {
+  margin-top: 27px;
+}
+.thead {
+  background-color: #f2f2f2;
+}
+.th {
+  padding: 20px;
+  text-align: center;
+}
+.tr {
+  text-align: center;
+}
+.logoutBtn {
+  position: absolute;
+  border: none;
+  font-size: 18px;
+  transition: color 0.5s, transform 0.2s, background-color 0.2s;
+  outline: none;
+  border-radius: 10px;
+  width: 3.5rem;
+  height: 2.5rem;
+  top: 1.5rem;
+  left: 9rem;
+  cursor: pointer;
+  background-color: #55a3f0;
+  color: #fff;
+}
+
+.logoutBtn:hover {
+  background-color: #077bef;
+}
+.noMoreProduct {
+  position: absolute;
+  padding: 2rem;
+  background-color: #fff;
+  margin-top: 0%;
+  width: 1234px;
+}
+.deleteGroup {
+  border: none;
+  font-size: 18px;
+  transition: color 0.5s, transform 0.2s, background-color 0.2s;
+  outline: none;
+  border-radius: 10px;
+  width: 13rem;
+  height: 2.5rem;
+  margin-bottom: 0rem;
+  cursor: pointer;
+  background-color: #55a3f0;
+  color: #fff;
+  opacity: 0;
+  transform: translateY(-10px);
+  animation: fadeInDown 0.3s ease forwards;
+}
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.alertSuccess {
+  background-color: rgb(54, 140, 54);
+  padding: 1rem 1rem;
+  width: 20%;
+  text-align: center;
+  border-radius: 10px;
+  color: #fff;
+}
+.alertError {
+  background-color: rgb(255, 95, 95);
+  padding: 1rem 1rem;
+  width: 20%;
+  text-align: center;
+  border-radius: 10px;
+  color: #fff;
+}

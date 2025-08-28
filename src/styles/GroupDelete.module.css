@@ -1,0 +1,93 @@
+
+@keyframes zoomIn {
+    from {
+      transform: scale(0.5);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+
+  .dialogOverlay {
+    position: fixed;
+    top: 0; 
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+  
+  .dialogOverlay {
+    position: fixed;
+    top: 0; 
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+  
+  .dialog {
+    flex-direction: column;
+    background: #fff;
+    width: 25rem;
+    height: 16rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(181, 180, 180, 0.3);
+    text-align: center;
+    z-index: 1001;
+    position: relative;
+    animation: zoomIn 0.3s ease-out forwards;
+  }
+  
+  .dialogOverlay button {
+    border: none;
+    width: 8rem;
+    height: 2rem;
+    border-radius: 10px;
+    font-size: 15px;
+    cursor: pointer;
+    margin-right: 14px;
+    margin-left: 14px;
+    margin-top: 2rem;
+  }
+  
+  .dialogOverlay p {
+    margin-top: 3rem;
+  }
+  
+  .cancel{
+    background-color: #DFDFDF;
+    color:#282828CC;
+  }
+  .deleteDialog{
+    background-color: #F43F5E;
+    color: #ffffff;
+  }
+  
+  .cancel:hover{
+    background-color: #b2b2b2;
+    color:#282828CC;
+  }
+  .deleteDialog:hover{
+    background-color: #f0183c;
+    color: #ffffff;
+  }
+  
+  
+  .image {
+    width: 80px;
+    height: 80px;
+  }
+  .image img {
+    margin-right: 9.5rem;
+    margin-top: 2rem;
+  }
