@@ -47,6 +47,14 @@
   .box button:hover {
     background-color: #077bef;
   }
+  .box button:disabled {
+    background-color: #90c4f8;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+  .box button:disabled:hover {
+    background-color: inherit;
+  }
   
   .box p {
     font-weight: 600;

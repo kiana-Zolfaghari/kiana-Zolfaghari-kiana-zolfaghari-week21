@@ -9,6 +9,7 @@ import { FaEyeSlash } from "../../node_modules/react-icons/fa";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import api from "@/services/config";
+import { useMutation } from "@tanstack/react-query";
 
 function Register() {
   const [username, setusername] = useState("");
@@ -29,7 +30,7 @@ function Register() {
     }
   }, [allert]);
 
-  const registerHandeler = () => {
+  const mutationFn = ({ username, password }) => {
     if (username === "") {
       notification("err", "وارد کردن نام کابری اجباری است");
       return;
@@ -55,6 +56,7 @@ function Register() {
         err, notification("err", "این کاربر قبلا ثبت شده");
       });
   };
+  const { isPending, mutate } = useMutation({ mutationFn });
 
   return (
     <>
@@ -127,7 +129,11 @@ function Register() {
               />
             </div>
           )}
-          <button type="submite" onClick={registerHandeler}>
+          <button
+            type="submite"
+            disabled={isPending}
+            onClick={() => mutate({ username, password })}
+          >
             ثبت نام
           </button>
           <Link href="/login" className={styles.link}>
@@ -140,3 +146,5 @@ function Register() {
 }
 
 export default Register;
+
+

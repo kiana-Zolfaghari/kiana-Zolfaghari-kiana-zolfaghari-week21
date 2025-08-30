@@ -8,6 +8,7 @@ import { FaEye } from "../../node_modules/react-icons/fa";
 import { FaEyeSlash } from "../../node_modules/react-icons/fa";
 import { NotificationContext } from "../context/NotificationContext";
 import { useContext } from "react";
+import { useMutation } from "@tanstack/react-query";
 
 function Login() {
   const [username, setusername] = useState("");
@@ -27,7 +28,7 @@ function Login() {
     }
   }, [allert]);
 
-  const loginHandeler = () => {
+  const mutationFn = ({ username, password }) => {
     if (username === "") {
       setMassage("نام  کاربری را وارد کنید!");
       return;
@@ -46,6 +47,7 @@ function Login() {
         err, notification("err", "نام کاربری یا رمز عبور اشتباه است");
       });
   };
+  const { isPending, mutate } = useMutation({ mutationFn });
   return (
     <>
       {allert && (
@@ -90,8 +92,12 @@ function Login() {
               />
             </div>
           )}
-          <button type="submite" onClick={loginHandeler}>
-            ورود
+          <button
+            type="submite"
+            disabled={isPending}
+            onClick={() => mutate({ username, password })}
+          >
+            {isPending ? "درحال ورود" : "ورود"}
           </button>
           <Link href="/register" className={styles.link}>
             ایجاد حساب کاربری!
