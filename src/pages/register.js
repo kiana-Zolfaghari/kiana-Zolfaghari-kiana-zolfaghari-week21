@@ -102,7 +102,7 @@ function Register() {
             </div>
           )}
           <input
-            type={showPassword ? "text" : "password"}
+            type={showRepeatPassword ? "text" : "password"}
             placeholder="تکرار رمز عبور"
             value={enterPasswordAgain}
             onChange={(e) => setEnterPasswordAgain(e.target.value)}
@@ -146,5 +146,3 @@ function Register() {
 }
 
 export default Register;
-
-

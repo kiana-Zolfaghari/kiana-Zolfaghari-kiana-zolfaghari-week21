@@ -40,23 +40,25 @@ function List({ product, setRefreshList, setShowAddDialog, page, index }) {
   };
 
   return (
-    <tr>
+    <tr className={styles.tr}>
       <td className={styles.index}>{index + 1 + (page - 1) * 10}</td>
       <td className={styles.td}>
-        <input
-          type="checkbox"
-          className={styles.checkbox}
-          onChange={(e) => {
-            const checked = e.target.checked;
-            setIds((ids) => {
-              if (checked) {
-                return [...ids, product.id];
-              } else {
-                return ids.filter((id) => id !== product.id);
-              }
-            });
-          }}
-        />
+        <div className={styles.input}>
+          <input
+            type="checkbox"
+            className={styles.checkbox}
+            onChange={(e) => {
+              const checked = e.target.checked;
+              setIds((ids) => {
+                if (checked) {
+                  return [...ids, product.id];
+                } else {
+                  return ids.filter((id) => id !== product.id);
+                }
+              });
+            }}
+          />
+        </div>
         {product.name === "" ? (
           <p className={styles.noData}>ثبت نشده</p>
         ) : (

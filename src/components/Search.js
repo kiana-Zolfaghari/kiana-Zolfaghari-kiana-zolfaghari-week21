@@ -14,15 +14,16 @@ function Search({ setList }) {
   return (
     <div>
       <input
+        name="search"
         type="text"
         placeholder="جست و جو..."
         className={styles.input}
         value={value}
         onChange={(e) => setVlue(e.target.value)}
       />
-      <span>
+      <div className={styles.container}>
         <CiSearch className={styles.icon} onClick={serachHandeler} />
-      </span>
+      </div>
     </div>
   );
 }

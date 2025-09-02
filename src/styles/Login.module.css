@@ -87,18 +87,18 @@
   font-size: 12px;
 }
 .FaEye3 {
-  position: absolute;
+  width: 100%;
   color: #868686;
-  left: 40%;
-  top: 29rem;
   cursor: pointer;
+  margin-right: 165%;
+  margin-top: -28px;
 }
 .FaEyeSlash3 {
-  position: absolute;
+  width: 100%;
   color: #868686;
-  left: 40%;
-  top: 29rem;
   cursor: pointer;
+  margin-right: 165%;
+  margin-top: -28px;
 }
 .FaEye3:hover {
   color: #077bef;

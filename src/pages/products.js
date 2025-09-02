@@ -1,7 +1,6 @@
 import styles from "../styles/products.module.css";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useContext } from "react";
-// import { ProductContext } from "../context/Product";
 import { NotificationContext } from "../context/NotificationContext";
 import Search from "../components/Search";
 import api from "../services/config";
@@ -11,6 +10,7 @@ import { useRouter } from "next/router";
 import AddProduct from "@/components/AddProducts";
 import { ProductContext } from "@/context/Product";
 import GroupDelete1 from "@/components/GroupDelete";
+import Paginations from "@/components/Pagination";
 
 function Products() {
   const [showAddDialog, setShowAddDialog] = useState(false);
@@ -21,11 +21,7 @@ function Products() {
   const router = useRouter();
   const { ids } = useContext(ProductContext);
   const { allert, alertType, notification } = useContext(NotificationContext);
-
-  useEffect(() => {
-    const token = localStorage.getItem("token");
-    router.push(token ? "/products" : "/login");
-  }, [router]);
+  const [totalPage, setTotalPage] = useState();
 
   useEffect(() => {
     if (allert) {
@@ -38,9 +34,19 @@ function Products() {
   }, [allert]);
 
   useEffect(() => {
+    const token = localStorage.getItem("token");
+
+    if (!token) {
+      router.push("/login");
+    }
+  }, []);
+
+  useEffect(() => {
     api
       .get(`/products?page=${page}&limit=10`)
-      .then((res) => setList(res.data.data))
+      .then((res) => {
+        setList(res.data.data), setTotalPage(res.data.totalPages);
+      })
       .catch((err) => {
         err, setList([]);
       });
@@ -53,7 +59,7 @@ function Products() {
   };
 
   return (
-    <>
+    <div>
       <Search setList={setList} />
       <ShowUsername />
       {allert && (
@@ -65,13 +71,17 @@ function Products() {
           {allert}
         </p>
       )}
-      <button className={styles.logoutBtn} onClick={logoutHandeler}>
-        خروج
-      </button>
+      <div className={styles.logout}>
+        <button className={styles.logoutBtn} onClick={logoutHandeler}>
+          خروج
+        </button>
+      </div>
       <p className={styles.p}>مدیریت کالا</p>
-      <button className={styles.btn} onClick={() => setShowAddDialog(true)}>
-        افزودن محصول
-      </button>
+      <div className={styles.head}>
+        <button className={styles.btn} onClick={() => setShowAddDialog(true)}>
+          افزودن محصول
+        </button>
+      </div>
       <hr />
       {ids.length > 0 ? (
         <button
@@ -93,42 +103,44 @@ function Products() {
           setRefreshList={setRefreshList}
         />
       )}
-      <table className={styles.table}>
-        <thead className={styles.thead}>
-          <tr className={styles.tr}>
-            <th className={styles.th}>ردیف</th>
-            <th className={styles.th}>نام کالا</th>
-            <th className={styles.th}>موجودی</th>
-            <th className={styles.th}>قیمت</th>
-            <th className={styles.th}>شناسه کالا</th>
-            <th className={styles.th}>عملگرها</th>
-          </tr>
-        </thead>
-        {list.length > 0 ? (
-          <tbody>
-            {list.map((product, index) => (
-              <List
-                key={product.id}
-                product={product}
-                index={index}
-                setRefreshList={setRefreshList}
-                setShowAddDialog={setShowAddDialog}
-                page={page}
-              />
-            ))}
-          </tbody>
-        ) : (
-          <tfoot>
-            <tr>
-              <td className={styles.noMoreProduct} colSpan="5">
-                هیچ محصولی موجود نیست
-              </td>
+      <div className={styles.tableWrapper}>
+        <table className={styles.table}>
+          <thead className={styles.thead}>
+            <tr className={styles.tr}>
+              <th className={styles.th}>ردیف</th>
+              <th className={styles.th}>نام کالا</th>
+              <th className={styles.th}>موجودی</th>
+              <th className={styles.th}>قیمت</th>
+              <th className={styles.th}>شناسه کالا</th>
+              <th className={styles.th}>عملگرها</th>
             </tr>
-          </tfoot>
-        )}
-      </table>
-      {/* <Paginations /> */}
-    </>
+          </thead>
+          {list.length > 0 ? (
+            <tbody>
+              {list.map((product, index) => (
+                <List
+                  key={product.id}
+                  product={product}
+                  index={index}
+                  setRefreshList={setRefreshList}
+                  setShowAddDialog={setShowAddDialog}
+                  page={page}
+                />
+              ))}
+            </tbody>
+          ) : (
+            <tfoot>
+              <tr>
+                <td className={styles.noMoreProduct} colSpan="5">
+                  هیچ محصولی موجود نیست
+                </td>
+              </tr>
+            </tfoot>
+          )}
+        </table>
+      </div>
+      <Paginations setPage={setPage} totalPage={totalPage} />
+    </div>
   );
 }
 
